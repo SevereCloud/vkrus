@@ -36,8 +36,8 @@ import (
 func init() {
 	peerID := 117253521   // USE strconv.Atoi(os.Getenv("PEER_ID"))
 	groupToken := "token" // USE os.Getenv("TOKEN")
-  hook := vkrus.NewHook(peerID, groupToken)
-  hook.UseLevels = log.AllLevels
+	hook := vkrus.NewHook(peerID, groupToken)
+	hook.UseLevels = log.AllLevels
 
 	log.AddHook(hook)
 }

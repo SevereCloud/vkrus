@@ -1,7 +1,10 @@
 github.com/SevereCloud/vksdk v1.2.1 h1:5aWQSER3D3BBjkSE4swxhjLD+yQUSxpNCK0kRJpIcPc=
 github.com/SevereCloud/vksdk v1.2.1/go.mod h1:qYx+oMLiRDso0NIGkV2zqOMn29N0hIbg69q0nXhDw18=
+github.com/SevereCloud/vksdk v1.3.0 h1:JFm1p/zVXG/wBKcmF9YVQ2ThzZoa4bh4XbryUQ5n3do=
+github.com/SevereCloud/vksdk v1.3.0/go.mod h1:APn7pT0i9OV5S9KBwzI4rWE84WOBXzRAMkjR0/ATIzw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/gorilla/websocket v1.4.1/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1 h1:mweAR1A6xJ3oS2pRaGiHgQ4OO8tzTaLawm8vnODuwDk=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=

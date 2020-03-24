@@ -63,6 +63,7 @@ var DefaultLevels = []logrus.Level{
 
 Optional params:
 
+- AppName
 - UseLevels
 - Extra
 - Asynchronous

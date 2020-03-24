@@ -3,6 +3,8 @@ package vkrus // import "github.com/SevereCloud/vkrus"
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
 
 	"github.com/SevereCloud/vksdk/api"
 	"github.com/sirupsen/logrus"
@@ -25,6 +27,7 @@ type VkHook struct {
 	PeerID int // Destination ID
 	VK     *api.VK
 
+	AppName         string
 	UseLevels       []logrus.Level
 	Extra           map[string]interface{}
 	Asynchronous    bool
@@ -90,24 +93,19 @@ func (hook *VkHook) newEntry(entry *logrus.Entry) *logrus.Entry {
 func (hook *VkHook) createMessage(entry *logrus.Entry) string {
 	var msg string
 
-	switch entry.Level {
-	case logrus.PanicLevel:
-		msg = "PANIC: "
-	case logrus.FatalLevel:
-		msg = "FATAL: "
-	case logrus.ErrorLevel:
-		msg = "ERROR: "
-	case logrus.WarnLevel:
-		msg = "WARN: "
-	case logrus.InfoLevel:
-		msg = "INFO: "
-	case logrus.DebugLevel:
-		msg = "DEBUG: "
-	case logrus.TraceLevel:
-		msg = "TRACE: "
+	if hook.AppName != "" {
+		msg += hook.AppName + "\n"
 	}
 
-	msg += entry.Message
+	nameLevel := strconv.Itoa(int(entry.Level))
+
+	nameLevelByte, err := entry.Level.MarshalText()
+	if err == nil {
+		nameLevel = strings.ToUpper(string(nameLevelByte))
+	}
+
+	msg += nameLevel + ": " + entry.Message
+
 	if len(entry.Data) > 0 {
 		msg += "\n\nMessage fields:\n"
 		for k, v := range entry.Data {

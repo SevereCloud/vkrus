@@ -40,6 +40,7 @@ func TestVkHook_Fire(t *testing.T) {
 		&vkrus.VkHook{
 			PeerID:          peerID,
 			VK:              api.Init(token),
+			AppName:         "App name",
 			Extra:           map[string]interface{}{"k3": "aoa"},
 			Asynchronous:    true,
 			DontParseLinks:  true,

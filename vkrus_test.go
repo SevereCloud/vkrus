@@ -5,6 +5,7 @@ import (
 	"os"
 	"reflect"
 	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/SevereCloud/vksdk/api"
@@ -14,6 +15,8 @@ import (
 )
 
 func TestVkHook_Fire(t *testing.T) {
+	t.Parallel()
+
 	data := map[string]interface{}{
 		"k0": 123,
 		"k1": "abc",
@@ -53,7 +56,19 @@ func TestVkHook_Fire(t *testing.T) {
 		},
 		false,
 	)
-	f(&vkrus.VkHook{Disabled: true}, &logrus.Entry{}, false)
+	f(
+		&vkrus.VkHook{Disabled: true},
+		&logrus.Entry{},
+		false,
+	)
+	f(
+		vkrus.NewHook(peerID, "badtoken"),
+		&logrus.Entry{
+			Level:   logrus.PanicLevel,
+			Message: "Test message",
+		},
+		true,
+	)
 	f(
 		vkrus.NewHook(peerID, token),
 		&logrus.Entry{
@@ -110,9 +125,19 @@ func TestVkHook_Fire(t *testing.T) {
 		},
 		false,
 	)
+	f(
+		vkrus.NewHook(peerID, token),
+		&logrus.Entry{
+			Level:   logrus.InfoLevel,
+			Message: strings.Repeat("ж", 4097),
+		},
+		false,
+	)
 }
 
 func TestVkHook_Levels(t *testing.T) {
+	t.Parallel()
+
 	f := func(hook *vkrus.VkHook, wantLevel []logrus.Level) {
 		t.Helper()
 

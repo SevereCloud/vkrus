@@ -5,10 +5,13 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"unicode/utf8"
 
 	"github.com/SevereCloud/vksdk/api"
 	"github.com/sirupsen/logrus"
 )
+
+const maxLenMessage = 4096
 
 // DefaultLevels to be fired when logging on
 var DefaultLevels = []logrus.Level{ // nolint: gochecknoglobals
@@ -117,23 +120,51 @@ func (hook *VkHook) createMessage(entry *logrus.Entry) string {
 }
 
 func (hook *VkHook) sendMessage(msg string) error {
-	params := api.Params{
-		"peer_id":          hook.PeerID,
-		"message":          msg,
-		"random_id":        0,
-		"dont_parse_links": hook.DontParseLinks,
-		"disable_mentions": hook.DisableMentions,
+	offset := 0
+	now := 0
+
+	count := len(msg)
+	if len(msg) > maxLenMessage {
+		count = maxLenMessage
 	}
 
-	if hook.Asynchronous {
-		go func() {
-			_, _ = hook.VK.MessagesSend(params)
-		}()
+	for now < len(msg) {
+		var text string
 
-		return nil
+		for now < offset+count {
+			runeValue, width := utf8.DecodeRuneInString(msg[now:])
+			if now+width <= offset+count {
+				text += string(runeValue)
+				now += width
+			}
+		}
+
+		params := api.Params{
+			"peer_id":          hook.PeerID,
+			"message":          text,
+			"random_id":        0,
+			"dont_parse_links": hook.DontParseLinks,
+			"disable_mentions": hook.DisableMentions,
+		}
+
+		if hook.Asynchronous {
+			go func() {
+				_, _ = hook.VK.MessagesSend(params)
+			}()
+		} else {
+			_, err := hook.VK.MessagesSend(params)
+			if err != nil {
+				return err
+			}
+		}
+
+		offset = now
+		if len(msg) >= offset+maxLenMessage {
+			count = maxLenMessage
+		} else {
+			count = len(msg) - now
+		}
 	}
 
-	_, err := hook.VK.MessagesSend(params)
-
-	return err
+	return nil
 }

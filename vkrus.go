@@ -40,7 +40,7 @@ type VkHook struct {
 func NewHook(peerID int, token string) *VkHook {
 	hook := &VkHook{
 		PeerID:    peerID,
-		VK:        api.Init(token),
+		VK:        api.NewVK(token),
 		UseLevels: DefaultLevels,
 	}
 

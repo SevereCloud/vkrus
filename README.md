@@ -1,7 +1,7 @@
 # vkrus
 
 [![Build Status](https://travis-ci.com/SevereCloud/vkrus.svg?branch=master)](https://travis-ci.com/SevereCloud/vkrus)
-[![Documentation](https://godoc.org/github.com/SevereCloud/vkrus?status.svg)](https://pkg.go.dev/github.com/SevereCloud/vkrus)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/SevereCloud/vkrus/v2)](https://pkg.go.dev/github.com/SevereCloud/vkrus/v2)
 [![codecov](https://codecov.io/gh/SevereCloud/vkrus/branch/master/graph/badge.svg)](https://codecov.io/gh/SevereCloud/vkrus)
 [![VK chat](https://img.shields.io/badge/VK%20chat-%234a76a8.svg?logo=VK&logoColor=white)](https://vk.me/join/AJQ1d6Or8Q00Y_CSOESfbqGt)
 [![release](https://img.shields.io/github/v/tag/SevereCloud/vkrus?label=release)](https://github.com/SevereCloud/vkrus/releases)
@@ -15,11 +15,11 @@ This library is packaged using [Go modules](https://github.com/golang/go/wiki/Mo
 
 ```sh
 # go mod init mymodulename
-go get github.com/SevereCloud/vkrus@latest
+go get github.com/SevereCloud/vkrus/v2@latest
 ```
 
-
 The hook must be configured with:
+
 - A peer ID (
   - For user: 'User ID', e.g. `12345`
   - For chat: '2000000000' + 'chat_id', e.g. `2000000001` (**chat_id for community**)
@@ -29,7 +29,7 @@ The hook must be configured with:
 package main
 
 import (
-	vkrus "github.com/SevereCloud/vkrus"
+	vkrus "github.com/SevereCloud/vkrus/v2"
 	log "github.com/sirupsen/logrus"
 )
 

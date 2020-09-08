@@ -8,9 +8,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/SevereCloud/vksdk/api"
+	"github.com/SevereCloud/vksdk/v2/api"
 
-	"github.com/SevereCloud/vkrus"
+	"github.com/SevereCloud/vkrus/v2"
 	"github.com/sirupsen/logrus"
 )
 

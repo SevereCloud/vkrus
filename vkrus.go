@@ -1,5 +1,5 @@
 // Package vkrus VK Hook for Logrus
-package vkrus // import "github.com/SevereCloud/vkrus"
+package vkrus // import "github.com/SevereCloud/vkrus/v2"
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/SevereCloud/vksdk/api"
+	"github.com/SevereCloud/vksdk/v2/api"
 	"github.com/sirupsen/logrus"
 )
 

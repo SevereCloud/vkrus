@@ -8,6 +8,7 @@ github.com/SevereCloud/vksdk/v2 v2.4.0 h1:hPS280kZFdsHp1a/36jiDh/MUmhashSfgBmbjt
 github.com/SevereCloud/vksdk/v2 v2.4.0/go.mod h1:iwdTeJBKKoQqpNtuK/pakABhKtF/NlqiqZjewQ1T6mQ=
 github.com/SevereCloud/vksdk/v2 v2.5.0/go.mod h1:iwdTeJBKKoQqpNtuK/pakABhKtF/NlqiqZjewQ1T6mQ=
 github.com/SevereCloud/vksdk/v2 v2.6.0/go.mod h1:iwdTeJBKKoQqpNtuK/pakABhKtF/NlqiqZjewQ1T6mQ=
+github.com/SevereCloud/vksdk/v2 v2.6.1/go.mod h1:IBmfJ3rs+zDLD9NHCoJEpgg5A4UOoxgUU/g8p5lYb48=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -32,6 +33,7 @@ golang.org/x/sys v0.0.0-20191026070338-33540a1f6037 h1:YyJpGZS1sBuBCzLAR1VEpK193
 golang.org/x/sys v0.0.0-20191026070338-33540a1f6037/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.3 h1:cokOdA+Jmi5PJGXLlLllQSgYigAEfHXJAERHVMaCc2k=
 golang.org/x/text v0.3.3/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
+golang.org/x/text v0.3.4/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
 golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=

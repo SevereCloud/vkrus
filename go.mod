@@ -3,6 +3,6 @@ module github.com/SevereCloud/vkrus/v2
 go 1.13
 
 require (
-	github.com/SevereCloud/vksdk/v2 v2.12.0
+	github.com/SevereCloud/vksdk/v2 v2.13.0
 	github.com/sirupsen/logrus v1.8.1
 )

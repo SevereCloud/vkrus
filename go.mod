@@ -4,5 +4,5 @@ go 1.13
 
 require (
 	github.com/SevereCloud/vksdk/v2 v2.16.0
-	github.com/sirupsen/logrus v1.9.2
+	github.com/sirupsen/logrus v1.9.3
 )
